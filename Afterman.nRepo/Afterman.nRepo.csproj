@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{428C6025-FE2E-4385-8908-9443641C1388}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Afterman.nRepo</RootNamespace>
+    <AssemblyName>Afterman.nRepo</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\RoyalAlliances\RoyalAlliances\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\QA\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CodeGen\DatabaseFirstCodeGenerator.cs" />
+    <Compile Include="Configuration\IDataAccessor.cs" />
+    <Compile Include="Configuration\IRepositoryConfiguration.cs" />
+    <Compile Include="Configuration\IRepositorySelector.cs" />
+    <Compile Include="DbPlatforms\Db2Platform.cs" />
+    <Compile Include="DbPlatforms\InformixPlatform.cs" />
+    <Compile Include="DbPlatforms\MsSqlServerPlatform.cs" />
+    <Compile Include="DbPlatforms\MySqlPlatform.cs" />
+    <Compile Include="DbPlatforms\InformixSqlLinkPlatform.cs" />
+    <Compile Include="DbPlatforms\InformixDRDAPlatform.cs" />
+    <Compile Include="DbPlatforms\OdbcPlatform.cs" />
+    <Compile Include="DbPlatforms\OraclePlatform.cs" />
+    <Compile Include="DbPlatforms\PostgresPlatform.cs" />
+    <Compile Include="DbPlatforms\SQLitePlatform.cs" />
+    <Compile Include="Events\IAfterAddListener.cs" />
+    <Compile Include="Events\IAfterRemoveListener.cs" />
+    <Compile Include="Events\IBeforeQueryListener.cs" />
+    <Compile Include="Events\IBeforeRemoveListener.cs" />
+    <Compile Include="Events\IBeforeAddListener.cs" />
+    <Compile Include="IDatabasePlatform.cs" />
+    <Compile Include="MasterUnitOfWork.cs" />
+    <Compile Include="InMemory\InMemoryConfiguration.cs" />
+    <Compile Include="InMemory\InMemoryDataAccessor.cs" />
+    <Compile Include="InMemory\InMemoryUnitOfWork.cs" />
+    <Compile Include="InMemory\InMemoryUnitOfWorkFactory.cs" />
+    <Compile Include="InRepoConfiguration.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="IUnitOfWorkFactory.cs" />
+    <Compile Include="NHibernate\NHibernateUnitOfWork.cs" />
+    <Compile Include="QueryableExtensions.cs" />
+    <Compile Include="Events\IRepositoryEvent.cs" />
+    <Compile Include="IRepositoryEventListener.cs" />
+    <Compile Include="NHibernate\NHibernateConfiguration.cs" />
+    <Compile Include="Configuration\RepositorySelector.cs" />
+    <Compile Include="Configure.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="NHibernate\ISessionBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NHibernate\NHibernateDataAccessor.cs" />
+    <Compile Include="NHibernate\SessionBuilder.cs" />
+    <Compile Include="NHibernate\SessionFactoryBuilder.cs" />
+    <Compile Include="RepositoryBase.cs" />
+    <Compile Include="RepositoryEventRegistry.cs" />
+    <Compile Include="NHibernate\NHibernateUnitOfWorkFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
