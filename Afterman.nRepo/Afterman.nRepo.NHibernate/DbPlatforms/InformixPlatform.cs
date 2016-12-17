@@ -1,4 +1,4 @@
-﻿namespace Afterman.nRepo.DbPlatforms
+﻿namespace Afterman.nRepo.NHibernate.DbPlatforms
 {
     public class InformixPlatform : IDatabasePlatform
     {

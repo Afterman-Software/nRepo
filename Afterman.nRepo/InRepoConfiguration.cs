@@ -6,7 +6,7 @@ namespace Afterman.nRepo
 {
     public interface InRepoConfiguration
     {
-        InRepoConfiguration With(string alias, IRepositoryConfiguration configuration);
+        InRepoConfiguration AddConfiguration(string alias, IRepositoryConfiguration configuration);
         IRepositoryConfiguration GetConfiguration(string alias);
         InRepoConfiguration WithEvent(IRepositoryEvent @event);
         InRepoConfiguration WithQueryInterceptor(IQueryInterceptor interceptor);
@@ -17,7 +17,7 @@ namespace Afterman.nRepo
 
     public class nRepoConfiguration : InRepoConfiguration
     {
-        public InRepoConfiguration With(string alias, IRepositoryConfiguration configuration)
+        public InRepoConfiguration AddConfiguration(string alias, IRepositoryConfiguration configuration)
         {
             Configurations[alias] = configuration;
             return this;

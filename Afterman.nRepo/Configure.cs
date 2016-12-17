@@ -15,9 +15,9 @@ namespace Afterman.nRepo
 
         public static IRepositorySelector As { get; }
 
-        public static InRepoConfiguration With(string alias, IRepositoryConfiguration configuration)
+        public static InRepoConfiguration AddConfiguration(string alias, IRepositoryConfiguration configuration)
         {
-            return MasterConfiguration.With(alias, configuration);
+            return MasterConfiguration.AddConfiguration(alias, configuration);
         }
     }
 }

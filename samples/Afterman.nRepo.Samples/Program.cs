@@ -9,7 +9,7 @@ namespace Afterman.nRepo.Samples
     {
         public static void Main(string[] args)
         {
-            var config = new nRepoConfiguration().With("Default",
+            var config = new nRepoConfiguration().AddConfiguration("Default",
                 new NHibernateConfiguration()
                     .AddMappings(typeof(Program).Assembly)
                     .ConnectionString("data source=.;initial catalog=samples;integrated security=sspi;")

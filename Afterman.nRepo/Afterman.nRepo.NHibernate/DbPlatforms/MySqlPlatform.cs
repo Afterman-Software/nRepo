@@ -1,7 +1,7 @@
-﻿using FluentNHibernate.Cfg.Db;
-
-namespace Afterman.nRepo.DbPlatforms
+﻿namespace Afterman.nRepo.NHibernate.DbPlatforms
 {
+    using FluentNHibernate.Cfg.Db;
+
     public class MySqlPlatform : IDatabasePlatform
     {
         public object AsNHibernateConfiguration(string connectionString)

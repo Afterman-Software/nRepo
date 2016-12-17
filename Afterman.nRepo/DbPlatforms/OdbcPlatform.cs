@@ -1,4 +1,0 @@
-﻿namespace Afterman.nRepo.DbPlatforms
-{
-    
-}

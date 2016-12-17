@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Afterman.nRepo.Configuration;
-using Afterman.nRepo.DbPlatforms;
 using Afterman.nRepo.Events;
 using NHibernate.Linq.Functions;
 
 namespace Afterman.nRepo.NHibernate
 {
+    using DbPlatforms;
+
     public class NHibernateConfiguration : IRepositoryConfiguration
     {
         private readonly IList<Assembly> _assemblies;
