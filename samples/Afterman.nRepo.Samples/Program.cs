@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Text;
-using Afterman.nRepo.NHibernate;
 using Afterman.nRepo.Samples.Usage;
 
 namespace Afterman.nRepo.Samples
 {
+    using Configuration;
+    using NHibernate.Configuration;
+
     public static class Program
     {
         public static void Main(string[] args)
         {
-            var config = new nRepoConfiguration().AddConfiguration("Default",
+            var config = new NRepoConfiguration().AddConfiguration("Default",
                 new NHibernateConfiguration()
                     .AddMappings(typeof(Program).Assembly)
                     .ConnectionString("data source=.;initial catalog=samples;integrated security=sspi;")

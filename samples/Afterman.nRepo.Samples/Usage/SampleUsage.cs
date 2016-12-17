@@ -2,7 +2,7 @@
 
 namespace Afterman.nRepo.Samples.Usage
 {
-   
+    using UnitsOfWork;
 
     public class Sample
     {
