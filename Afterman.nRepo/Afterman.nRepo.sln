@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afterman.nRepo", "Afterman.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afterman.nRepo.Samples", "..\samples\Afterman.nRepo.Samples\Afterman.nRepo.Samples.csproj", "{3C84CAAB-C3F0-41C7-9DFF-6FAFA2FC2E0F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3BBC1891-0AE6-4B32-A45A-E51AEE4594DD}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
