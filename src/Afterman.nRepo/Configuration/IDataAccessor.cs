@@ -8,6 +8,7 @@ namespace Afterman.nRepo.Configuration
     using System.Data;
 
     public interface IDataAccessor<TAggregate> : IDisposable
+        where TAggregate : class
 
     {
         void SetIsolationLevel(IsolationLevel level);

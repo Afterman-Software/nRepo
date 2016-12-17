@@ -9,6 +9,8 @@
     using UnitsOfWork;
 
     public class NHibernateDataAccessor<T> : IDataAccessor<T>
+            where T : class
+
     {
         private IsolationLevel _isolationLevel;
 
@@ -22,7 +24,7 @@
             this.Session = unitOfWork.Session;
         }
 
-        public ISession Session { get; }
+        protected ISession Session { get; }
 
         public virtual IQueryable<T> CreateQuery()
         {

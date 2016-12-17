@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{868897A1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afterman.nRepo.Tests", "tests\Afterman.nRepo.Tests\Afterman.nRepo.Tests.csproj", "{58C2E4D3-F939-493A-B3E4-193617D6913F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Afterman.nRepo.EntityFramework", "src\Afterman.nRepo.EntityFramework\Afterman.nRepo.EntityFramework.csproj", "{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,12 @@ Global
 		{58C2E4D3-F939-493A-B3E4-193617D6913F}.QA|Any CPU.Build.0 = Release|Any CPU
 		{58C2E4D3-F939-493A-B3E4-193617D6913F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58C2E4D3-F939-493A-B3E4-193617D6913F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}.QA|Any CPU.ActiveCfg = Release|Any CPU
+		{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}.QA|Any CPU.Build.0 = Release|Any CPU
+		{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C0D1FF-B7D3-4F2A-8B0F-B19C51108FE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

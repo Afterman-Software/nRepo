@@ -113,7 +113,9 @@
             return new NHibernateUnitOfWorkFactory(SessionFactoryBuilder);
         }
 
-        public virtual IDataAccessor<T> Create<T>(IUnitOfWork unitOfWork, string name)
+        protected virtual IDataAccessor<T> Create<T>(IUnitOfWork unitOfWork, string name)
+            where T : class
+
         {
             return new NHibernateDataAccessor<T>(unitOfWork as NHibernateUnitOfWork);
         }
