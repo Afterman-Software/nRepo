@@ -14,6 +14,7 @@
     public class NHibernateConfiguration : IRepositoryConfiguration
     {
         private readonly IList<Assembly> _assemblies;
+        private readonly IList<Type> _mappingTypes;
         private bool _updateSchema;
         private IDatabasePlatform _platform;
         private string _defaultSchema = "dbo";
@@ -39,6 +40,12 @@
         public NHibernateConfiguration AddMappings(Assembly assembly)
         {
             this._assemblies.Add(assembly);
+            return this;
+        }
+
+        public NHibernateConfiguration AddMappingsForNamespaceOf<T>()
+        {
+            this._mappingTypes.Add(typeof(T));
             return this;
         }
 
@@ -93,7 +100,7 @@
 
         public virtual IRepositoryConfiguration Start()
         {
-            this.SessionFactoryBuilder = new SessionFactoryBuilder(this._platform, this._connectionString, this._assemblies, this._updateSchema, this._defaultSchema, this._linqExtension, this._showSql, this._exposedConfiguration);
+            this.SessionFactoryBuilder = new SessionFactoryBuilder(this._platform, this._connectionString, this._assemblies, this._mappingTypes, this._updateSchema, this._defaultSchema, this._linqExtension, this._showSql, this._exposedConfiguration);
             return this;
         }
 

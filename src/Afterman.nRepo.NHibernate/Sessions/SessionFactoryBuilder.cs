@@ -15,7 +15,7 @@
     {
         public ISessionFactory SessionFactory { get; }
 
-        public SessionFactoryBuilder(IDatabasePlatform platform, string connStr, IList<Assembly> assemblies, bool updateSchema, string defaultSchema, ILinqToHqlGeneratorsRegistry linqRegistry, bool showSql, Action<global::NHibernate.Cfg.Configuration> exposedConfig)
+        public SessionFactoryBuilder(IDatabasePlatform platform, string connStr, IList<Assembly> assemblies, IList<Type> mappingTypes, bool updateSchema, string defaultSchema, ILinqToHqlGeneratorsRegistry linqRegistry, bool showSql, Action<global::NHibernate.Cfg.Configuration> exposedConfig)
         {
             var configurer = platform.AsNHibernateConfiguration(connStr) as IPersistenceConfigurer;
          
@@ -24,6 +24,7 @@
             this.SessionFactory = Fluently.Configure()
             .Database(configurer)
             .Mappings(m => assemblies.ToList().ForEach(asm=> m.FluentMappings.AddFromAssembly(asm)))
+            .Mappings(m => mappingTypes.ToList().ForEach(t => m.FluentMappings.AddFromNamespace(t)))
 
             .ExposeConfiguration(cfg =>
                                  {

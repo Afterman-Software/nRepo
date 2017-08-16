@@ -30,11 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentNHibernate">
-      <HintPath>..\bin\Debug\FluentNHibernate.dll</HintPath>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\bin\Debug\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.4.0.0.4000\lib\net40\NHibernate.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +60,7 @@
     <Compile Include="DbPlatforms\PostgresPlatform.cs" />
     <Compile Include="DbPlatforms\SQLitePlatform.cs" />
     <Compile Include="ExtensionPoint.cs" />
+    <Compile Include="FluentNHibernateExtensions.cs" />
     <Compile Include="Sessions\ISessionBuilder.cs" />
     <Compile Include="Configuration\NHibernateConfiguration.cs" />
     <Compile Include="Configuration\NHibernateDataAccessor.cs" />
